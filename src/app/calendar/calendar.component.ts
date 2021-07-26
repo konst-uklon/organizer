@@ -12,6 +12,7 @@ interface Day {
 interface Week {
   days: Day[];
 }
+
 @Component({
   selector: 'app-calendar',
   templateUrl: './calendar.component.html',
@@ -19,6 +20,15 @@ interface Week {
 })
 export class CalendarComponent implements OnInit {
   calendar!: Week[];
+  readonly daysOfWeek: string[] = [
+    'Mon',
+    'Tue',
+    'Wen',
+    'Thu',
+    'Fri',
+    'Sat',
+    'Sun',
+  ];
 
   constructor(private dateService: DateService) {}
 
@@ -27,8 +37,8 @@ export class CalendarComponent implements OnInit {
   }
 
   generate(now: moment.Moment) {
-    const startDay = now.clone().startOf('month').startOf('week');
-    const endDay = now.clone().endOf('month').endOf('week');
+    const startDay = now.clone().startOf('month').startOf('isoWeek');
+    const endDay = now.clone().endOf('month').endOf('isoWeek');
 
     const date = startDay.clone().subtract(1, 'day');
     const calendar = [];

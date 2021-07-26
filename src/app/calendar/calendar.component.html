@@ -1,13 +1,7 @@
 <table class="table">
   <thead>
     <tr>
-      <th>Sun</th>
-      <th>Mon</th>
-      <th>Tue</th>
-      <th>Wen</th>
-      <th>Thu</th>
-      <th>Fri</th>
-      <th>Sat</th>
+      <th *ngFor="let weekDay of daysOfWeek">{{ weekDay }}</th>
     </tr>
   </thead>
   <tbody>
