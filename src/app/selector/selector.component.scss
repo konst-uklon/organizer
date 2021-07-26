@@ -1,0 +1,16 @@
+.selector {
+  &-content {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  &-text {
+    margin: 0 2rem;
+    text-align: center;
+    width: 200px;
+  }
+}
+
+i {
+  cursor: pointer;
+}
